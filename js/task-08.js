@@ -5,9 +5,8 @@ loginForm.addEventListener("submit", handleSubmit);
     
     const {email, password} = event.currentTarget.elements
     if (email.value === "" || password.value === "") {
-        alert("Success");
+        alert('Будь ласка, заповніть всі поля');
     } else {
-        alert("Error");
     console.log({ email: email.value, password: password.value });
     loginForm.reset();
     }
