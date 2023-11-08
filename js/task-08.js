@@ -1,12 +1,14 @@
 const loginForm = document.querySelector(".login-form");
-loginForm.addEventListener("submit", function (event) {
+loginForm.addEventListener("submit", handleSubmit);
+    function handleSubmit(event) {
     event.preventDefault();
     
-    const email = this.elements.email.value;
-    const password = this.elements.password.value;
-    if (email === "example@example.com" && password === "password") {
+    const {email, password} = event.currentTarget.elements
+    if (email.value === "" || password.value === "") {
         alert("Success");
     } else {
         alert("Error");
+    console.log({ email: email.value, password: password.value });
+    loginForm.reset();
     }
-});
+};
